@@ -16,7 +16,7 @@ Start server:
     
 Test server (default port is __54321__):
 
-    $ curl localhost:54321/users; curl localhost:54321/users/1; curl localhost:54321/users/2
+    $ curl 127.0.0.1:54321/users; curl 127.0.0.1:54321/users/1; curl 127.0.0.1:54321/users/2
     
 Stop server: 
 

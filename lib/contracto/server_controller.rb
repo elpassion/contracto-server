@@ -24,7 +24,7 @@ class Contracto::ServerController
     end
 
     def stop_contracto_server!
-      uri = URI.parse("http://localhost:#{port}/contracto/terminate")
+      uri = URI.parse("http://127.0.1.1:#{port}/contracto/terminate")
       response = Net::HTTP.get_response(uri)
       if response.is_a?(Net::HTTPOK)
         puts 'contracto server killed'
@@ -43,7 +43,7 @@ class Contracto::ServerController
     end
 
     def contracto_server_running?
-      uri = URI.parse("http://localhost:#{port}/contracto")
+      uri = URI.parse("http://127.0.0.1:#{port}/contracto")
       Net::HTTP.get_response(uri).is_a?(Net::HTTPOK)
     rescue Errno::ECONNREFUSED
       false
