@@ -24,7 +24,7 @@ class Contracto::ServerController
     end
 
     def stop_contracto_server!
-      uri = URI.parse("http://127.0.1.1:#{port}/contracto/terminate")
+      uri = URI.parse("http://127.0.0.1:#{port}/contracto/terminate")
       response = Net::HTTP.get_response(uri)
       if response.is_a?(Net::HTTPOK)
         puts 'contracto server killed'
